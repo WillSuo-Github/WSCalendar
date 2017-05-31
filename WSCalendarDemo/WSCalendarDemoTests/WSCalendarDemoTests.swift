@@ -1,15 +1,15 @@
 //
-//  WSCalendarTests.swift
-//  WSCalendarTests
+//  WSCalendarDemoTests.swift
+//  WSCalendarDemoTests
 //
 //  Created by WS on 2017/5/31.
 //  Copyright © 2017年 WS. All rights reserved.
 //
 
 import XCTest
-@testable import WSCalendar
+@testable import WSCalendarDemo
 
-class WSCalendarTests: XCTestCase {
+class WSCalendarDemoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

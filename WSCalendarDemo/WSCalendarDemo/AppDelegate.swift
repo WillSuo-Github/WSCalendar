@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  WSCalendar
+//  WSCalendarDemo
 //
 //  Created by WS on 2017/5/31.
 //  Copyright © 2017年 WS. All rights reserved.

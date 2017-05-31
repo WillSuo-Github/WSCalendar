@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5424094B1EDE910900680935"
-               BuildableName = "WSCalendar.app"
-               BlueprintName = "WSCalendar"
-               ReferencedContainer = "container:WSCalendar.xcodeproj">
+               BlueprintIdentifier = "542409851EDEAA7B00680935"
+               BuildableName = "WSCalendarDemo.app"
+               BlueprintName = "WSCalendarDemo"
+               ReferencedContainer = "container:WSCalendarDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5424095F1EDE910900680935"
-               BuildableName = "WSCalendarTests.xctest"
-               BlueprintName = "WSCalendarTests"
-               ReferencedContainer = "container:WSCalendar.xcodeproj">
+               BlueprintIdentifier = "542409991EDEAA7B00680935"
+               BuildableName = "WSCalendarDemoTests.xctest"
+               BlueprintName = "WSCalendarDemoTests"
+               ReferencedContainer = "container:WSCalendarDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5424096A1EDE910900680935"
-               BuildableName = "WSCalendarUITests.xctest"
-               BlueprintName = "WSCalendarUITests"
-               ReferencedContainer = "container:WSCalendar.xcodeproj">
+               BlueprintIdentifier = "542409A41EDEAA7B00680935"
+               BuildableName = "WSCalendarDemoUITests.xctest"
+               BlueprintName = "WSCalendarDemoUITests"
+               ReferencedContainer = "container:WSCalendarDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5424094B1EDE910900680935"
-            BuildableName = "WSCalendar.app"
-            BlueprintName = "WSCalendar"
-            ReferencedContainer = "container:WSCalendar.xcodeproj">
+            BlueprintIdentifier = "542409851EDEAA7B00680935"
+            BuildableName = "WSCalendarDemo.app"
+            BlueprintName = "WSCalendarDemo"
+            ReferencedContainer = "container:WSCalendarDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5424094B1EDE910900680935"
-            BuildableName = "WSCalendar.app"
-            BlueprintName = "WSCalendar"
-            ReferencedContainer = "container:WSCalendar.xcodeproj">
+            BlueprintIdentifier = "542409851EDEAA7B00680935"
+            BuildableName = "WSCalendarDemo.app"
+            BlueprintName = "WSCalendarDemo"
+            ReferencedContainer = "container:WSCalendarDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5424094B1EDE910900680935"
-            BuildableName = "WSCalendar.app"
-            BlueprintName = "WSCalendar"
-            ReferencedContainer = "container:WSCalendar.xcodeproj">
+            BlueprintIdentifier = "542409851EDEAA7B00680935"
+            BuildableName = "WSCalendarDemo.app"
+            BlueprintName = "WSCalendarDemo"
+            ReferencedContainer = "container:WSCalendarDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

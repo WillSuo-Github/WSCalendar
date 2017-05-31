@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>WSCalendar.xcscheme</key>
+		<key>WSCalendarDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5424094B1EDE910900680935</key>
+		<key>542409851EDEAA7B00680935</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5424095F1EDE910900680935</key>
+		<key>542409991EDEAA7B00680935</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5424096A1EDE910900680935</key>
+		<key>542409A41EDEAA7B00680935</key>
 		<dict>
 			<key>primary</key>
 			<true/>
