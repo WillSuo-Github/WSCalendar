@@ -12,6 +12,7 @@ class WSCalendarCollectionCell: UICollectionViewCell {
     
     public var calendarDate: WSCalendarDate! {
         didSet {
+            
             let timeStr = calendarDate.dateString as NSString
             titleLabel.text = timeStr.substring(from: 6)
             if calendarDate.isSelectable {

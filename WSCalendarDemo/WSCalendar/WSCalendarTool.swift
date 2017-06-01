@@ -23,7 +23,7 @@ class WSCalendarTool {
     public let disableScrollingBeforeDate: Date = Date()
     public let lastSelectableDate: Date = {
         var dayComponents = DateComponents()
-        dayComponents.day = 70
+        dayComponents.day = 10
         let calendar = Calendar(identifier: .gregorian)
         if let lastDate = calendar.date(byAdding: dayComponents, to: Date()) {
             return lastDate
@@ -62,7 +62,10 @@ class WSCalendarTool {
         
         var tmpArr: [WSCalendarDate] = [WSCalendarDate]()
         
-        for i in 1...getNumberOfDaysInMonth(date) {
+        let maxSelectableDays = getDayNum(disableScrollingBeforeDate, lastSelectableDate)
+        let currentMonthDays = getNumberOfDaysInMonth(date)
+        
+        for i in 1...currentMonthDays {
             let str = nowDateBaseStr.appending(String(format: "%02d", i))
             let tmpDate = dateFormatter.date(from: str)!
             var calendarDate: WSCalendarDate = WSCalendarDate(date: tmpDate, dateString: str, isSelectable: false, isSelect: false)
@@ -74,9 +77,19 @@ class WSCalendarTool {
                 calendarDate.isSelectable = true
             }
             
+            if i > maxSelectableDays {
+                calendarDate.isSelectable = false
+            }
+            
             tmpArr.append(calendarDate)
         }
         
         return tmpArr
+    }
+    
+    private func getDayNum(_ date: Date,_ betweenDate: Date) -> Int {
+        let result = calendar.dateComponents([.day], from: date, to: betweenDate)
+
+        return result.day ?? 0
     }
 }
