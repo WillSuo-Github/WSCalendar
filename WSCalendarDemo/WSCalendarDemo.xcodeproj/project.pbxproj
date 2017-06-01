@@ -17,6 +17,7 @@
 		542409B91EDEAAF200680935 /* WSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409B81EDEAAF200680935 /* WSCalendarView.swift */; };
 		542409BC1EDEAF6100680935 /* WSCalendarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BA1EDEAF6100680935 /* WSCalendarCollectionCell.swift */; };
 		542409BD1EDEAF6100680935 /* WSCalendarCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542409BB1EDEAF6100680935 /* WSCalendarCollectionCell.xib */; };
+		542409BF1EDFBBEE00680935 /* WSCalendarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		542409B81EDEAAF200680935 /* WSCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarView.swift; sourceTree = "<group>"; };
 		542409BA1EDEAF6100680935 /* WSCalendarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarCollectionCell.swift; sourceTree = "<group>"; };
 		542409BB1EDEAF6100680935 /* WSCalendarCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSCalendarCollectionCell.xib; sourceTree = "<group>"; };
+		542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				542409B81EDEAAF200680935 /* WSCalendarView.swift */,
 				542409BA1EDEAF6100680935 /* WSCalendarCollectionCell.swift */,
 				542409BB1EDEAF6100680935 /* WSCalendarCollectionCell.xib */,
+				542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */,
 			);
 			path = WSCalendar;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				5424098C1EDEAA7B00680935 /* ViewController.swift in Sources */,
 				542409BC1EDEAF6100680935 /* WSCalendarCollectionCell.swift in Sources */,
 				542409B91EDEAAF200680935 /* WSCalendarView.swift in Sources */,
+				542409BF1EDFBBEE00680935 /* WSCalendarTool.swift in Sources */,
 				5424098A1EDEAA7B00680935 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

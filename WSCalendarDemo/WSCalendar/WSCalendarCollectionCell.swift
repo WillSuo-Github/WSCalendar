@@ -10,9 +10,19 @@ import UIKit
 
 class WSCalendarCollectionCell: UICollectionViewCell {
     
-    public var titleText: String = "" {
+    public var calendarDate: WSCalendarDate! {
         didSet {
-            self.titleLabel.text = titleText
+            let timeStr = calendarDate.dateString as NSString
+            titleLabel.text = timeStr.substring(from: 6)
+            if calendarDate.isSelectable {
+                self.titleLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1)
+            }else{
+                self.titleLabel.textColor = UIColor(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+            }
+            
+            if calendarDate.isSelect {
+                changeToSelect()
+            }
         }
     }
 
@@ -25,6 +35,8 @@ class WSCalendarCollectionCell: UICollectionViewCell {
         titleLabel.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 229/255.0, alpha: 1)
     }
 
-
+    private func changeToSelect() {
+        self.titleLabel.backgroundColor = .red
+    }
     
 }

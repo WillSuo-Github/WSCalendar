@@ -10,9 +10,11 @@ import UIKit
 
 class WSCalendarView: UIView {
     
-    fileprivate let sourceArr: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
+    fileprivate var sourceArr: [WSCalendarDate]!
     
     private var collectionView: UICollectionView!
+    
+    var calendarTool: WSCalendarTool = WSCalendarTool()
     
 //MARK:- life cycle
     override init(frame: CGRect) {
@@ -20,6 +22,7 @@ class WSCalendarView: UIView {
     
         backgroundColor = .red
         
+        configSourceArr()
         configSubViews()
     }
     
@@ -43,6 +46,11 @@ class WSCalendarView: UIView {
         collectionView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         self.bounds.size.height = CGFloat(height)
     }
+    
+//MARK:- other
+    private func configSourceArr() {
+        sourceArr = calendarTool.getAllDate()
+    }
 }
 
 extension WSCalendarView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -52,8 +60,8 @@ extension WSCalendarView: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WSCalendarCollectionCell", for: indexPath) as! WSCalendarCollectionCell
-        
-        cell.titleText = sourceArr[indexPath.row]
+
+        cell.calendarDate = sourceArr[indexPath.row]
         return cell
     }
     
