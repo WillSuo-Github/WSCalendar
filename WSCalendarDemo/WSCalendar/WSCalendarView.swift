@@ -32,8 +32,10 @@ class WSCalendarView: UIView {
 //MARK:- layout
     
     private func configSubViews() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        let layout = WSCalendarCollectionLayout()
+        layout.allCol = 7
+        layout.allRow = sourceArr.count / 7
+        layout.scrollDirection = .horizontal
         collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
         self.addSubview(collectionView)
         collectionView.delegate = self
