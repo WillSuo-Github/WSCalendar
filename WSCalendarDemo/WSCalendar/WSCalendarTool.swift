@@ -21,7 +21,7 @@ class WSCalendarTool {
 
 //MARK:- public property
     public let disableScrollingBeforeDate: Date = Date()
-    public let lastSelectableDate: Date = Date()
+    public var lastSelectableDate: Date = Date()
     
 //MARK:- private property
     private let calendar: Calendar = Calendar(identifier: .gregorian)
@@ -106,16 +106,28 @@ class WSCalendarTool {
         let fromWeekIndex = calendar.dateComponents([.weekday], from: fromDate.date).weekday
         let toWeekIndex = calendar.dateComponents([.weekday], from: toDate.date).weekday
         
-        
+        var headerArr: [WSCalendarDate] = [WSCalendarDate]()
         if let fromIndex = fromWeekIndex {
             for i in 1..<fromIndex {
                 let date = getDate(fromDate.date, i - fromIndex)
-                WSCalendarDate(date:date , dateString: getDateStr(date), isSelectable: false, isSelect: false)
+                let calendarDate = WSCalendarDate(date:date , dateString: getDateStr(date), isSelectable: false, isSelect: false)
+                headerArr.append(calendarDate)
             }
         }
         
+        var footerArr: [WSCalendarDate] = [WSCalendarDate]()
+        if let toIndex = toWeekIndex {
+            for i in toIndex..<7 {
+                let date = getDate(toDate.date, 7 - i)
+                let calendarDate = WSCalendarDate(date: date, dateString: getDateStr(date), isSelectable: false, isSelect: false)
+                footerArr.insert(calendarDate, at: 0)
+            }
+        }
         
-        return dataArr
+        var allArr = dataArr
+        allArr.insert(contentsOf: headerArr, at: 0)
+        allArr.insert(contentsOf: footerArr, at: allArr.count)
+        return allArr
     }
     
     private func getDate(_ date: Date,_ offset:Int) -> Date{
