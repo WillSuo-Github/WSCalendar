@@ -33,7 +33,8 @@ class WSCalendarCollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 229/255.0, alpha: 1)
+        backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
+        titleLabel.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
     }
 
     private func changeToSelect() {

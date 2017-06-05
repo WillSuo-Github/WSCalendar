@@ -534,6 +534,7 @@
 				542409B01EDEAA7B00680935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		542409B11EDEAA7B00680935 /* Build configuration list for PBXNativeTarget "WSCalendarDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +543,7 @@
 				542409B31EDEAA7B00680935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		542409B41EDEAA7B00680935 /* Build configuration list for PBXNativeTarget "WSCalendarDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +552,7 @@
 				542409B61EDEAA7B00680935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

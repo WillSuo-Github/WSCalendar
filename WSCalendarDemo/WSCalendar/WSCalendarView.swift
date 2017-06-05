@@ -39,7 +39,8 @@ class WSCalendarView: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "WSCalendarCollectionCell", bundle: nil), forCellWithReuseIdentifier: "WSCalendarCollectionCell")
-        collectionView.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 229/255.0, alpha: 1)
+        collectionView.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
+        
     }
     
     fileprivate func updateCollectionViewFrame(_ width: Double,_ height: Double) {
