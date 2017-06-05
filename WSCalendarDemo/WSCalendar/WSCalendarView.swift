@@ -10,7 +10,7 @@ import UIKit
 
 class WSCalendarView: UIView {
     
-    fileprivate var sourceArr: [WSCalendarDate]!
+    fileprivate var sourceArr: [[WSCalendarDate]]!
     
     private var collectionView: UICollectionView!
     
@@ -55,14 +55,18 @@ class WSCalendarView: UIView {
 }
 
 extension WSCalendarView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sourceArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sourceArr[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WSCalendarCollectionCell", for: indexPath) as! WSCalendarCollectionCell
 
-        cell.calendarDate = sourceArr[indexPath.row]
+        cell.calendarDate = sourceArr[indexPath.section][indexPath.row]
         return cell
     }
     
@@ -70,7 +74,7 @@ extension WSCalendarView: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         
         let cellWidth = Double(collectionView.bounds.size.width) / 7
         
-        updateCollectionViewFrame(cellWidth * 7, cellWidth * ceil(Double(sourceArr.count) / 7.0))
+        updateCollectionViewFrame(cellWidth * 7, cellWidth * ceil(Double(sourceArr[indexPath.section].count) / 7.0))
         return CGSize(width: cellWidth, height: cellWidth)
     }
     

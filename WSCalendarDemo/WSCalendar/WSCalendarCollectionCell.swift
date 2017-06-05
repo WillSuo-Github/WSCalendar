@@ -23,6 +23,8 @@ class WSCalendarCollectionCell: UICollectionViewCell {
             
             if calendarDate.isSelect {
                 changeToSelect()
+            }else{
+                changeToUnSelect()
             }
         }
     }
@@ -39,6 +41,10 @@ class WSCalendarCollectionCell: UICollectionViewCell {
 
     private func changeToSelect() {
         self.titleLabel.backgroundColor = .red
+    }
+    
+    private func changeToUnSelect() {
+        self.titleLabel.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
     }
     
 }
