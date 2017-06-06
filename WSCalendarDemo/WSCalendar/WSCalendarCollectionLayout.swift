@@ -11,7 +11,7 @@ import UIKit
 class WSCalendarCollectionLayout: UICollectionViewFlowLayout {
 
     var allCol: Int!
-    var allRow: Int!
+    var allRow: [Int]!
     
     var allAttributes: [[UICollectionViewLayoutAttributes]] = [[UICollectionViewLayoutAttributes]]()
     
@@ -37,21 +37,11 @@ class WSCalendarCollectionLayout: UICollectionViewFlowLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let indexRow = indexPath.row
-        
-        
-        let x = indexRow % allCol
-        let y = indexRow / allCol
-        
+        let x = indexRow % allRow[indexPath.section]
+        let y = indexRow / allRow[indexPath.section]
         let attribute = super.layoutAttributesForItem(at: indexPath)
-        print("x:\(x)  y:\(y)    \(indexRow) to \(x * allRow + y)")
-        
-        attribute?.indexPath = IndexPath(item: x  * allRow + y, section: indexPath.section)
-        
+        attribute?.indexPath = IndexPath(item: x * allCol + y, section: indexPath.section)
         return attribute
     }
-    
-//    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-//        let attribute =  super.layoutAttributesForElements(in: rect)
-//        return attribute
-//    }
+
 }

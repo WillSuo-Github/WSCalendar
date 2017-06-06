@@ -34,7 +34,7 @@ class WSCalendarView: UIView {
     private func configSubViews() {
         let layout = WSCalendarCollectionLayout()
         layout.allCol = 7
-        layout.allRow = sourceArr.count / 7
+        layout.allRow = getAllRows()
         layout.scrollDirection = .horizontal
         collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
         self.addSubview(collectionView)
@@ -53,6 +53,14 @@ class WSCalendarView: UIView {
 //MARK:- other
     private func configSourceArr() {
         sourceArr = calendarTool.getAllDate()
+    }
+    
+    private func getAllRows() -> [Int] {
+        var tmpArr: [Int] = [Int]()
+        for i in 0..<sourceArr.count {
+            tmpArr.append(sourceArr[i].count / 7)
+        }
+        return tmpArr
     }
 }
 
