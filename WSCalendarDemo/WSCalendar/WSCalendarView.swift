@@ -19,8 +19,6 @@ class WSCalendarView: UIView {
 //MARK:- life cycle
     public init(frame: CGRect, config: WSCalendarConfig) {
         super.init(frame: frame)
-    
-        backgroundColor = .red
         
         configSourceArr()
         configSubViews()
@@ -34,6 +32,7 @@ class WSCalendarView: UIView {
     private func configSubViews() {
         
         scrollView = UIScrollView(frame: self.bounds)
+        scrollView.backgroundColor = WSCalendarConfig.scrollBackgroundColor
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
@@ -86,7 +85,8 @@ extension WSCalendarView: UIScrollViewDelegate {
         
         if let itemSize = WSCalendarConfig.itemSize {
             let height = CGFloat(itemRow) * itemSize.height + CGFloat(itemRow - 1) * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.top + WSCalendarConfig.scrollEdgeInset.bottom
-            updateScrollViewFrame(scrollView.bounds.size.width, height)
+            let width = 7.0 * itemSize.width + 6.0 * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.left + WSCalendarConfig.scrollEdgeInset.right
+            updateScrollViewFrame(width, height)
         }
         
     }

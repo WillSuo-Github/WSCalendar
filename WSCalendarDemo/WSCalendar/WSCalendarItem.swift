@@ -16,9 +16,9 @@ class WSCalendarItem: UIView {
             let timeStr = calendarDate.dateString as NSString
             titleLabel.text = timeStr.substring(from: 6)
             if calendarDate.isSelectable {
-                self.titleLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1)
+                self.titleLabel.textColor =  WSCalendarConfig.itemNomalTextColor
             }else{
-                self.titleLabel.textColor = UIColor(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+                self.titleLabel.textColor = WSCalendarConfig.itemUnSelectableTextColor
             }
             
             if calendarDate.isSelect {
@@ -45,11 +45,11 @@ class WSCalendarItem: UIView {
 
 //MARK:- layout
     private func configSubviews() {
-        titleLabel = UILabel(frame: self.frame)
+        titleLabel = UILabel(frame: self.bounds)
         titleLabel.textAlignment = .center
         self.addSubview(titleLabel)
-        backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
-        titleLabel.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
+        self.backgroundColor = WSCalendarConfig.itemBackgroundColor
+        titleLabel.backgroundColor = WSCalendarConfig.itemBackgroundColor
     }
     
     override func layoutSubviews() {
@@ -62,7 +62,7 @@ class WSCalendarItem: UIView {
     }
     
     private func changeToUnSelect() {
-        self.titleLabel.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
+        self.titleLabel.backgroundColor = WSCalendarConfig.itemBackgroundColor
     }
     
 }

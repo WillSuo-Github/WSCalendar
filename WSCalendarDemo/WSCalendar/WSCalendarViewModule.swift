@@ -17,7 +17,7 @@ struct WSCalendarViewModule {
         
         var baseX: CGFloat = 0.0
         var baseY: CGFloat = 0.0
-        let itemWH: CGFloat = (scrollViewWidth - WSCalendarConfig.scrollEdgeInset.left - WSCalendarConfig.scrollEdgeInset.right) / 7
+        let itemWH: CGFloat = ((scrollViewWidth - WSCalendarConfig.scrollEdgeInset.left - WSCalendarConfig.scrollEdgeInset.right) / 7).toTwoPoint()
         WSCalendarConfig.itemSize = CGSize(width: itemWH, height: itemWH)
         
         var itemX: CGFloat = 0.0
@@ -43,10 +43,17 @@ struct WSCalendarViewModule {
         }
         return allModuleArr
     }
-    
-    
-    
-    
-    
-    
+}
+
+
+extension CGFloat {
+    func toTwoPoint () -> CGFloat{
+        let str = String(format: "%.2f", self)
+        
+        if let number = NumberFormatter().number(from: str) {
+            return CGFloat(number)
+        }else{
+            return 0.0
+        }
+    }
 }
