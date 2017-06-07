@@ -14,11 +14,11 @@ class WSCalendarItem: UIView {
         didSet {
             
             let timeStr = calendarDate.dateString as NSString
-            titleLabel.text = timeStr.substring(from: 6)
+            titleButton.setTitle(timeStr.substring(from: 6), for: .normal)
             if calendarDate.isSelectable {
-                self.titleLabel.textColor =  WSCalendarConfig.itemNomalTextColor
+                titleButton.setTitleColor(WSCalendarConfig.itemNomalTextColor, for: .normal)
             }else{
-                self.titleLabel.textColor = WSCalendarConfig.itemUnSelectableTextColor
+                titleButton.setTitleColor(WSCalendarConfig.itemUnSelectableTextColor, for: .normal)
             }
             
             if calendarDate.isSelect {
@@ -29,7 +29,7 @@ class WSCalendarItem: UIView {
         }
     }
 
-    private var titleLabel: UILabel!
+    private var titleButton: UIButton!
     
 //MARK:- life cycle
 
@@ -45,24 +45,23 @@ class WSCalendarItem: UIView {
 
 //MARK:- layout
     private func configSubviews() {
-        titleLabel = UILabel(frame: self.bounds)
-        titleLabel.textAlignment = .center
-        self.addSubview(titleLabel)
+        titleButton = UIButton(type: .custom)
+        self.addSubview(titleButton)
         self.backgroundColor = WSCalendarConfig.itemBackgroundColor
-        titleLabel.backgroundColor = WSCalendarConfig.itemBackgroundColor
+        titleButton.backgroundColor = WSCalendarConfig.itemBackgroundColor
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel.frame = self.bounds
+        titleButton.frame = self.bounds
     }
     
     private func changeToSelect() {
-        self.titleLabel.backgroundColor = .red
+        self.titleButton.backgroundColor = .red
     }
     
     private func changeToUnSelect() {
-        self.titleLabel.backgroundColor = WSCalendarConfig.itemBackgroundColor
+        self.titleButton.backgroundColor = WSCalendarConfig.itemBackgroundColor
     }
     
 }
