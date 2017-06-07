@@ -14,11 +14,11 @@ struct WSCalendarViewModule {
     
     public static func getAllModules(scrollViewWidth: CGFloat) -> [[WSCalendarViewModule]] {
         
-        let itemSpacing: CGFloat = 0.0
-        let scrollEdgeInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        
         var baseX: CGFloat = 0.0
         var baseY: CGFloat = 0.0
-        let itemWH: CGFloat = (scrollViewWidth - scrollEdgeInset.left - scrollEdgeInset.right) / 7
+        let itemWH: CGFloat = (scrollViewWidth - WSCalendarConfig.scrollEdgeInset.left - WSCalendarConfig.scrollEdgeInset.right) / 7
+        WSCalendarConfig.itemSize = CGSize(width: itemWH, height: itemWH)
         
         var itemX: CGFloat = 0.0
         var itemY: CGFloat = 0.0
@@ -28,13 +28,13 @@ struct WSCalendarViewModule {
         let calendarTool: WSCalendarTool = WSCalendarTool()
         let calendarDateArr = calendarTool.getAllDate()
         for i in 0..<calendarDateArr.count {
-            baseX = CGFloat(i) * scrollViewWidth + scrollEdgeInset.left
-            baseY = scrollEdgeInset.top
+            baseX = CGFloat(i) * scrollViewWidth + WSCalendarConfig.scrollEdgeInset.left
+            baseY = WSCalendarConfig.scrollEdgeInset.top
             var moduleArr = [WSCalendarViewModule]()
             for j in 0..<calendarDateArr[i].count {
                 
-                itemX = baseX + CGFloat(j % 7) * (itemWH + itemSpacing)
-                itemY = baseY + CGFloat(j / 7) * (itemWH + itemSpacing)
+                itemX = baseX + CGFloat(j % 7) * (itemWH + WSCalendarConfig.itemSpacing)
+                itemY = baseY + CGFloat(j / 7) * (itemWH + WSCalendarConfig.itemSpacing)
                 let itemFrame = CGRect(x: itemX, y: itemY, width: itemWH, height: itemWH)
                 let calendarModule = WSCalendarViewModule(calendarDate: calendarDateArr[i][j], frame:itemFrame)
                 moduleArr.append(calendarModule)

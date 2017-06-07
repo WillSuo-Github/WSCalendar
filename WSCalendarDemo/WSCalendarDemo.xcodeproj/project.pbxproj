@@ -20,6 +20,7 @@
 		542409BF1EDFBBEE00680935 /* WSCalendarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */; };
 		548F62871EE7A86900040915 /* WSCalendarViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F62861EE7A86900040915 /* WSCalendarViewModule.swift */; };
 		548F62891EE7A88700040915 /* WSCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F62881EE7A88700040915 /* WSCalendarDate.swift */; };
+		548F628B1EE7F0AB00040915 /* WSCalendarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F628A1EE7F0AB00040915 /* WSCalendarConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarTool.swift; sourceTree = "<group>"; };
 		548F62861EE7A86900040915 /* WSCalendarViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarViewModule.swift; sourceTree = "<group>"; };
 		548F62881EE7A88700040915 /* WSCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarDate.swift; sourceTree = "<group>"; };
+		548F628A1EE7F0AB00040915 /* WSCalendarConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				541050F21EE5997300F47D91 /* WSCalendarCollectionLayout.swift */,
 				548F62861EE7A86900040915 /* WSCalendarViewModule.swift */,
 				548F62881EE7A88700040915 /* WSCalendarDate.swift */,
+				548F628A1EE7F0AB00040915 /* WSCalendarConfig.swift */,
 			);
 			path = WSCalendar;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				5424098C1EDEAA7B00680935 /* ViewController.swift in Sources */,
 				548F62891EE7A88700040915 /* WSCalendarDate.swift in Sources */,
+				548F628B1EE7F0AB00040915 /* WSCalendarConfig.swift in Sources */,
 				542409BC1EDEAF6100680935 /* WSCalendarItem.swift in Sources */,
 				542409B91EDEAAF200680935 /* WSCalendarView.swift in Sources */,
 				548F62871EE7A86900040915 /* WSCalendarViewModule.swift in Sources */,

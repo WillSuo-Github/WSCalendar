@@ -17,7 +17,7 @@ class WSCalendarView: UIView {
     
     
 //MARK:- life cycle
-    override init(frame: CGRect) {
+    public init(frame: CGRect, config: WSCalendarConfig) {
         super.init(frame: frame)
     
         backgroundColor = .red
@@ -34,6 +34,9 @@ class WSCalendarView: UIView {
     private func configSubViews() {
         
         scrollView = UIScrollView(frame: self.bounds)
+        scrollView.delegate = self
+        scrollView.isPagingEnabled = true
+        scrollView.bounces = false
         self.addSubview(scrollView)
         
         configScrollViewCell()
@@ -48,6 +51,13 @@ class WSCalendarView: UIView {
                 scrollView.addSubview(itemView)
             }
         }
+        
+        scrollView.contentSize = CGSize(width: scrollView.bounds.size.width * CGFloat(sourceArr.count), height: scrollView.bounds.size.height)
+    }
+    
+    fileprivate func updateScrollViewFrame(_ width: CGFloat, _ height: CGFloat) {
+        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: width, height: height)
+        scrollView.frame = self.bounds
     }
     
 //MARK:- other
@@ -64,4 +74,21 @@ class WSCalendarView: UIView {
     }
 }
 
+
+extension WSCalendarView: UIScrollViewDelegate {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        print(11)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let index = lroundf(Float(scrollView.contentOffset.x / scrollView.bounds.size.width))
+        let itemRow = sourceArr[index].count / 7
+        
+        if let itemSize = WSCalendarConfig.itemSize {
+            let height = CGFloat(itemRow) * itemSize.height + CGFloat(itemRow - 1) * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.top + WSCalendarConfig.scrollEdgeInset.bottom
+            updateScrollViewFrame(scrollView.bounds.size.width, height)
+        }
+        
+    }
+}
 
