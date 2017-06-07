@@ -8,15 +8,6 @@
 
 import UIKit
 
-
-struct WSCalendarDate {
-    
-    var date: Date
-    var dateString: String
-    var isSelectable: Bool
-    var isSelect: Bool
-}
-
 class WSCalendarTool {
 
 //MARK:- public property
@@ -57,9 +48,9 @@ class WSCalendarTool {
         
         
         dateFormatter.dateFormat = "yyyyMM"
-        let nowDateBaseStr = dateFormatter.string(from: date)
+        let dateBaseStr = dateFormatter.string(from: date)
         dateFormatter.dateFormat = "yyyyMMdd"
-        let nowDateStr = dateFormatter.string(from: date)
+        let beforeDateStr = dateFormatter.string(from: disableScrollingBeforeDate)
         
         var tmpArr: [WSCalendarDate] = [WSCalendarDate]()
         
@@ -70,15 +61,15 @@ class WSCalendarTool {
         
         
         for i in 1...currentMonthDays {
-            let str = nowDateBaseStr.appending(String(format: "%02d", i))
+            let str = dateBaseStr.appending(String(format: "%02d", i))
             let tmpDate = dateFormatter.date(from: str)!
             var calendarDate: WSCalendarDate = WSCalendarDate(date: tmpDate, dateString: str, isSelectable: false, isSelect: false)
             
             //特殊的日子判断
-            if (str == nowDateStr) {
+            if (str == beforeDateStr) {
                 calendarDate.isSelect = true
                 calendarDate.isSelectable = true
-            }else if(str > nowDateStr){
+            }else if(str > beforeDateStr){
                 calendarDate.isSelectable = true
             }
             

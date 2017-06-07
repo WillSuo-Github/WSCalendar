@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WSCalendarCollectionCell: UICollectionViewCell {
+class WSCalendarItem: UIView {
     
     public var calendarDate: WSCalendarDate! {
         didSet {
@@ -29,16 +29,34 @@ class WSCalendarCollectionCell: UICollectionViewCell {
         }
     }
 
-    @IBOutlet weak var titleLabel: UILabel!
+    private var titleLabel: UILabel!
     
 //MARK:- life cycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
+        configSubviews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+//MARK:- layout
+    private func configSubviews() {
+        titleLabel = UILabel(frame: self.frame)
+        titleLabel.textAlignment = .center
+        self.addSubview(titleLabel)
         backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
         titleLabel.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        titleLabel.frame = self.bounds
+    }
+    
     private func changeToSelect() {
         self.titleLabel.backgroundColor = .red
     }

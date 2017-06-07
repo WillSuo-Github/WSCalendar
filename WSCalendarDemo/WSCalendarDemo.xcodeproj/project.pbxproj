@@ -16,9 +16,10 @@
 		5424099F1EDEAA7B00680935 /* WSCalendarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424099E1EDEAA7B00680935 /* WSCalendarDemoTests.swift */; };
 		542409AA1EDEAA7B00680935 /* WSCalendarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409A91EDEAA7B00680935 /* WSCalendarDemoUITests.swift */; };
 		542409B91EDEAAF200680935 /* WSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409B81EDEAAF200680935 /* WSCalendarView.swift */; };
-		542409BC1EDEAF6100680935 /* WSCalendarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BA1EDEAF6100680935 /* WSCalendarCollectionCell.swift */; };
-		542409BD1EDEAF6100680935 /* WSCalendarCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542409BB1EDEAF6100680935 /* WSCalendarCollectionCell.xib */; };
+		542409BC1EDEAF6100680935 /* WSCalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BA1EDEAF6100680935 /* WSCalendarItem.swift */; };
 		542409BF1EDFBBEE00680935 /* WSCalendarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */; };
+		548F62871EE7A86900040915 /* WSCalendarViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F62861EE7A86900040915 /* WSCalendarViewModule.swift */; };
+		548F62891EE7A88700040915 /* WSCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F62881EE7A88700040915 /* WSCalendarDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +55,10 @@
 		542409A91EDEAA7B00680935 /* WSCalendarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarDemoUITests.swift; sourceTree = "<group>"; };
 		542409AB1EDEAA7B00680935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		542409B81EDEAAF200680935 /* WSCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarView.swift; sourceTree = "<group>"; };
-		542409BA1EDEAF6100680935 /* WSCalendarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarCollectionCell.swift; sourceTree = "<group>"; };
-		542409BB1EDEAF6100680935 /* WSCalendarCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSCalendarCollectionCell.xib; sourceTree = "<group>"; };
+		542409BA1EDEAF6100680935 /* WSCalendarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarItem.swift; sourceTree = "<group>"; };
 		542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarTool.swift; sourceTree = "<group>"; };
+		548F62861EE7A86900040915 /* WSCalendarViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarViewModule.swift; sourceTree = "<group>"; };
+		548F62881EE7A88700040915 /* WSCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,10 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				542409B81EDEAAF200680935 /* WSCalendarView.swift */,
-				542409BA1EDEAF6100680935 /* WSCalendarCollectionCell.swift */,
-				542409BB1EDEAF6100680935 /* WSCalendarCollectionCell.xib */,
+				542409BA1EDEAF6100680935 /* WSCalendarItem.swift */,
 				542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */,
 				541050F21EE5997300F47D91 /* WSCalendarCollectionLayout.swift */,
+				548F62861EE7A86900040915 /* WSCalendarViewModule.swift */,
+				548F62881EE7A88700040915 /* WSCalendarDate.swift */,
 			);
 			path = WSCalendar;
 			sourceTree = "<group>";
@@ -257,7 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				542409941EDEAA7B00680935 /* LaunchScreen.storyboard in Resources */,
-				542409BD1EDEAF6100680935 /* WSCalendarCollectionCell.xib in Resources */,
 				542409911EDEAA7B00680935 /* Assets.xcassets in Resources */,
 				5424098F1EDEAA7B00680935 /* Main.storyboard in Resources */,
 			);
@@ -285,8 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5424098C1EDEAA7B00680935 /* ViewController.swift in Sources */,
-				542409BC1EDEAF6100680935 /* WSCalendarCollectionCell.swift in Sources */,
+				548F62891EE7A88700040915 /* WSCalendarDate.swift in Sources */,
+				542409BC1EDEAF6100680935 /* WSCalendarItem.swift in Sources */,
 				542409B91EDEAAF200680935 /* WSCalendarView.swift in Sources */,
+				548F62871EE7A86900040915 /* WSCalendarViewModule.swift in Sources */,
 				542409BF1EDFBBEE00680935 /* WSCalendarTool.swift in Sources */,
 				541050F31EE5997300F47D91 /* WSCalendarCollectionLayout.swift in Sources */,
 				5424098A1EDEAA7B00680935 /* AppDelegate.swift in Sources */,
