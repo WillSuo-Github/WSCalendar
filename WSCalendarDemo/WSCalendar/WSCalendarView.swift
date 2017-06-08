@@ -13,7 +13,7 @@ class WSCalendarView: UIView {
     fileprivate var sourceArr: [[WSCalendarViewModule]]!
     
     fileprivate var scrollView: UIScrollView!
-    
+    fileprivate var selectArr: [WSCalendarItem] = [WSCalendarItem]()
     
     
 //MARK:- life cycle
@@ -47,6 +47,9 @@ class WSCalendarView: UIView {
                 let itemModule = sourceArr[i][j]
                 let itemView = WSCalendarItem(frame: itemModule.frame)
                 itemView.calendarDate = itemModule.calendarDate
+                itemView.restorationIdentifier = "\(i),\(j)"
+                itemView.selectArr = selectArr
+                itemView.calendarDelegate = self
                 scrollView.addSubview(itemView)
             }
         }
@@ -57,6 +60,19 @@ class WSCalendarView: UIView {
     fileprivate func updateScrollViewFrame(_ width: CGFloat, _ height: CGFloat) {
         self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: width, height: height)
         scrollView.frame = self.bounds
+    }
+    
+    fileprivate func reloadData() {
+        for subview in scrollView.subviews {
+            if let str = subview.restorationIdentifier {
+                let array = str.components(separatedBy: ",")
+                let i = Int(array[0])!
+                let j = Int(array[1])!
+                let subV = subview as! WSCalendarItem
+                subV.calendarDate = sourceArr[i][j].calendarDate
+                subV.frame = sourceArr[i][j].frame
+            }
+        }
     }
     
 //MARK:- other
@@ -90,5 +106,29 @@ extension WSCalendarView: UIScrollViewDelegate {
         }
         
     }
+}
+
+extension WSCalendarView: WSCalendarItemDelegate {
+    
+    func calendarItemDidTapped(_ calendarItem: WSCalendarItem, viewId: String) {
+
+        for view in selectArr {
+            let v = view as WSCalendarItem
+            let array = v.restorationIdentifier!.components(separatedBy: ",")
+            let i = Int(array[0])!
+            let j = Int(array[1])!
+            sourceArr[i][j].calendarDate.selectState = .normal
+        }
+        
+        selectArr.removeAll()
+        
+        let array = viewId.components(separatedBy: ",")
+        let i = Int(array[0])!
+        let j = Int(array[1])!
+        sourceArr[i][j].calendarDate.selectState = .selected
+        selectArr.append(calendarItem)
+        reloadData()
+    }
+    
 }
 

@@ -8,12 +8,21 @@
 
 import UIKit
 
+enum WSCalendarItemSelectState {
+    case normal
+    case selected
+    case unSelect
+    case defaultSelect
+    case unSelectable
+}
+
 struct WSCalendarDate {
-    
+    //对应的日期
     var date: Date
+    //日期的标题
     var dateString: String
-    var isSelectable: Bool
-    var isSelect: Bool
+    //选中的状态
+    var selectState: WSCalendarItemSelectState
     
     
 }

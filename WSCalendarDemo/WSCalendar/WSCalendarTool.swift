@@ -30,7 +30,7 @@ class WSCalendarTool {
     }
     
     init() {
-        lastSelectableDate = getDate(Date(), 70)
+        lastSelectableDate = getDate(Date(), 63)
     }
 
 //MARK:- private func
@@ -63,19 +63,18 @@ class WSCalendarTool {
         for i in 1...currentMonthDays {
             let str = dateBaseStr.appending(String(format: "%02d", i))
             let tmpDate = dateFormatter.date(from: str)!
-            var calendarDate: WSCalendarDate = WSCalendarDate(date: tmpDate, dateString: str, isSelectable: false, isSelect: false)
+            var calendarDate: WSCalendarDate = WSCalendarDate(date: tmpDate, dateString: str, selectState: .normal)
             
             //特殊的日子判断
             if (str == beforeDateStr) {
-                calendarDate.isSelect = true
-                calendarDate.isSelectable = true
-            }else if(str > beforeDateStr){
-                calendarDate.isSelectable = true
+                calendarDate.selectState = .defaultSelect
+            }else if(str < beforeDateStr) {
+                calendarDate.selectState = .unSelectable
             }
             
             //超出的日期
-            if i > maxSelectableDays {
-                calendarDate.isSelectable = false
+            if lastSelectableDate.compare(tmpDate) == .orderedAscending {
+                calendarDate.selectState = .unSelectable
             }
             
             //收尾的天数
@@ -125,7 +124,7 @@ class WSCalendarTool {
         if let fromIndex = fromWeekIndex {
             for i in 1..<fromIndex {
                 let date = getDate(fromDate.date, i - fromIndex)
-                let calendarDate = WSCalendarDate(date:date , dateString: getDateStr(date), isSelectable: false, isSelect: false)
+                let calendarDate = WSCalendarDate(date:date , dateString: getDateStr(date), selectState: .unSelectable)
                 headerArr.append(calendarDate)
             }
         }
@@ -134,7 +133,7 @@ class WSCalendarTool {
         if let toIndex = toWeekIndex {
             for i in toIndex..<7 {
                 let date = getDate(toDate.date, 7 - i)
-                let calendarDate = WSCalendarDate(date: date, dateString: getDateStr(date), isSelectable: false, isSelect: false)
+                let calendarDate = WSCalendarDate(date: date, dateString: getDateStr(date), selectState: .unSelectable)
                 footerArr.insert(calendarDate, at: 0)
             }
         }
