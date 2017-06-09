@@ -8,13 +8,24 @@
 
 import UIKit
 
+
+protocol WSCalendarViewDelegate: class {
+    func didSelectDate(calendarDate: WSCalendarDate)
+    func didShowMonth(currentMonth: Int)
+}
+
+extension WSCalendarViewDelegate {
+    func didSelectDate(calendarDate: WSCalendarDate) {}
+    func didShowMonth(currentMonth: Int) {}
+}
+
 class WSCalendarView: UIView {
     
     fileprivate var sourceArr: [[WSCalendarViewModule]]!
-    
     fileprivate var scrollView: UIScrollView!
     fileprivate var selectArr: [WSCalendarItem] = [WSCalendarItem]()
     
+    open weak var calendarDelegate: WSCalendarViewDelegate?
     
 //MARK:- life cycle
     public init(frame: CGRect, config: WSCalendarConfig) {
@@ -22,6 +33,10 @@ class WSCalendarView: UIView {
         
         configSourceArr()
         configSubViews()
+        
+        delay(0.2) { 
+            self.scrollViewDidEndDecelerating(self.scrollView)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,7 +64,7 @@ class WSCalendarView: UIView {
                 itemView.calendarDate = itemModule.calendarDate
                 itemView.restorationIdentifier = "\(i),\(j)"
                 itemView.selectArr = selectArr
-                itemView.calendarDelegate = self
+                itemView.itemDelegate = self
                 scrollView.addSubview(itemView)
             }
         }
@@ -80,6 +95,12 @@ class WSCalendarView: UIView {
         sourceArr = WSCalendarViewModule.getAllModules(scrollViewWidth: self.bounds.size.width)
     }
     
+    fileprivate func getCurrentMonth() -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM"
+        return Int(dateFormatter.string(from: Date()))!
+    }
+    
     private func getAllRows() -> [Int] {
         var tmpArr: [Int] = [Int]()
         for i in 0..<sourceArr.count {
@@ -87,13 +108,16 @@ class WSCalendarView: UIView {
         }
         return tmpArr
     }
+    
+    private func delay(_ second: Double,_ block: @escaping ()->Void){
+        DispatchQueue.main.asyncAfter(deadline: .now() + second) {
+            block()
+        }
+    }
 }
 
 
 extension WSCalendarView: UIScrollViewDelegate {
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        print(11)
-    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let index = lroundf(Float(scrollView.contentOffset.x / scrollView.bounds.size.width))
@@ -104,7 +128,15 @@ extension WSCalendarView: UIScrollViewDelegate {
             let width = 7.0 * itemSize.width + 6.0 * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.left + WSCalendarConfig.scrollEdgeInset.right
             updateScrollViewFrame(width, height)
         }
-        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = lroundf(Float(scrollView.contentOffset.x / scrollView.bounds.size.width))
+        var currentMonth = getCurrentMonth()
+        currentMonth = currentMonth + index
+        if let delegate = calendarDelegate {
+            delegate.didShowMonth(currentMonth: currentMonth)
+        }
     }
 }
 
@@ -128,6 +160,10 @@ extension WSCalendarView: WSCalendarItemDelegate {
         sourceArr[i][j].calendarDate.selectState = .selected
         selectArr.append(calendarItem)
         reloadData()
+        
+        if let delegate = calendarDelegate {
+            delegate.didSelectDate(calendarDate: sourceArr[i][j].calendarDate)
+        }
     }
     
 }

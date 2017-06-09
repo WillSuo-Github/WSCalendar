@@ -27,7 +27,7 @@ class WSCalendarItem: UIView {
         }
     }
     
-    open weak var calendarDelegate: WSCalendarItemDelegate?
+    open weak var itemDelegate: WSCalendarItemDelegate?
 
     private var titleButton: UIButton!
     private var isDefaultSelet: Bool = false
@@ -101,7 +101,7 @@ class WSCalendarItem: UIView {
         if calendarDate.selectState == .unSelectable { return }
         
         calendarDate.selectState = .selected
-        if let delegate = calendarDelegate {
+        if let delegate = itemDelegate {
             delegate.calendarItemDidTapped(self, viewId: self.restorationIdentifier!)
         }
     }

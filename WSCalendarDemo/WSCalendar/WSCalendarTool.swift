@@ -46,7 +46,7 @@ class WSCalendarTool {
     
     private func getDaysInMonth(_ date: Date) -> [WSCalendarDate] {
         
-        
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 8)
         dateFormatter.dateFormat = "yyyyMM"
         let dateBaseStr = dateFormatter.string(from: date)
         dateFormatter.dateFormat = "yyyyMMdd"
@@ -54,7 +54,7 @@ class WSCalendarTool {
         
         var tmpArr: [WSCalendarDate] = [WSCalendarDate]()
         
-        let maxSelectableDays = getDayNum(disableScrollingBeforeDate, lastSelectableDate)
+//        let maxSelectableDays = getDayNum(disableScrollingBeforeDate, lastSelectableDate)
         let currentMonthDays = getNumberOfDaysInMonth(date)
         //当月的第一天和最后一天
         var firstDate: WSCalendarDate! ,lastDate: WSCalendarDate!
