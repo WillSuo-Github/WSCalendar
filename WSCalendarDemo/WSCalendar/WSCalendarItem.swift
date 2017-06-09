@@ -30,6 +30,7 @@ class WSCalendarItem: UIView {
     open weak var calendarDelegate: WSCalendarItemDelegate?
 
     private var titleButton: UIButton!
+    private var isDefaultSelet: Bool = false
     
 //MARK:- life cycle
 
@@ -45,7 +46,7 @@ class WSCalendarItem: UIView {
 
 //MARK:- layout
     private func configSubviews() {
-        titleButton = UIButton(type: .custom)
+        titleButton = UIButton(frame: self.bounds)
         titleButton.addTarget(self, action: #selector(titleButtonDidTapped(sender:)), for: .touchUpInside)
         self.addSubview(titleButton)
         self.backgroundColor = WSCalendarConfig.itemBackgroundColor
@@ -59,11 +60,11 @@ class WSCalendarItem: UIView {
     private func configTitleButton() {
         switch calendarDate.selectState {
         case .defaultSelect:
+            isDefaultSelet = true
             titleButton.setTitleColor(WSCalendarConfig.itemDefaultSelectTextColor, for: .normal)
             titleButton.ws_setBackgroundColor(WSCalendarConfig.itemDefaultSelectBgColor, for: .normal)
         case .normal:
-            titleButton.setTitleColor(WSCalendarConfig.itemNomalTextColor, for: .normal)
-            titleButton.ws_setBackgroundColor(WSCalendarConfig.itemBackgroundColor, for: .normal)
+            changeToNormal()
         case .selected:
             changeToSelect()
         case .unSelect:
@@ -85,6 +86,16 @@ class WSCalendarItem: UIView {
         titleButton.setTitleColor(WSCalendarConfig.itemNomalTextColor, for: .normal)
     }
     
+    private func changeToNormal() {
+        if isDefaultSelet {
+            titleButton.ws_setBackgroundColor(WSCalendarConfig.itemDefaultSelectBgColor, for: .normal)
+            titleButton.setTitleColor(WSCalendarConfig.itemDefaultSelectTextColor, for: .normal)
+        }else {
+            titleButton.setTitleColor(WSCalendarConfig.itemNomalTextColor, for: .normal)
+            titleButton.ws_setBackgroundColor(WSCalendarConfig.itemBackgroundColor, for: .normal)
+        }
+    }
+    
 //MARK:- tapped response
     @objc private func titleButtonDidTapped(sender: UIButton) {
         if calendarDate.selectState == .unSelectable { return }
@@ -103,12 +114,14 @@ extension UIButton {
     }
     
     private func ws_getImage(_ color: UIColor) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        
+        let rect = self.bounds
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(color.cgColor)
-        context?.fill(rect)
-        
+        context?.addArc(center: self.center, radius: self.bounds.size.width / 2 - 3, startAngle: 0, endAngle: CGFloat(Double.pi * 2.0), clockwise: false)
+        context?.fillPath()
+        draw(self.bounds)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return image
