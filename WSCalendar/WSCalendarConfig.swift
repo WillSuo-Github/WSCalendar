@@ -9,6 +9,9 @@
 import UIKit
 
 struct WSCalendarConfig {
+    
+    public static var startDate: Date = Date()
+    public static var maxDayAfterStart: Int = 10
 
     public static var itemSpacing: CGFloat = 0.0
     public static var scrollEdgeInset = UIEdgeInsetsMake(10, 10, 10, 10)
