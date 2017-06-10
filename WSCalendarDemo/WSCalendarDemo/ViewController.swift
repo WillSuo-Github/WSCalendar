@@ -21,7 +21,9 @@ class ViewController: UIViewController {
 //MARK:- layout
     private func configSubViews() {
         
-        calendarView = WSCalendarView(frame: CGRect(x: 0, y: 100, width: 100, height: 100), config: WSCalendarConfig())
+        WSCalendarConfig.maxDayAfterStart = 70
+        
+        calendarView = WSCalendarView(frame: CGRect(x: 0, y: 100, width: 100, height: 100))
         calendarView.calendarDelegate = self
         view.addSubview(calendarView)
     }

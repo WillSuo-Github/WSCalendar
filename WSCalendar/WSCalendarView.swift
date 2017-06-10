@@ -28,7 +28,7 @@ class WSCalendarView: UIView {
     open weak var calendarDelegate: WSCalendarViewDelegate?
     
 //MARK:- life cycle
-    public init(frame: CGRect, config: WSCalendarConfig) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         configSourceArr()
@@ -68,6 +68,8 @@ class WSCalendarView: UIView {
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         self.addSubview(scrollView)
         
         configScrollViewCell()
