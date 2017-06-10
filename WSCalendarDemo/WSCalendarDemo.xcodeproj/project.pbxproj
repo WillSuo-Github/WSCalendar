@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		541050F31EE5997300F47D91 /* WSCalendarCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541050F21EE5997300F47D91 /* WSCalendarCollectionLayout.swift */; };
+		540A1C211EEBE01B0059DD7D /* WSCalendarCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A1C1A1EEBE01B0059DD7D /* WSCalendarCollectionLayout.swift */; };
+		540A1C221EEBE01B0059DD7D /* WSCalendarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A1C1B1EEBE01B0059DD7D /* WSCalendarConfig.swift */; };
+		540A1C231EEBE01B0059DD7D /* WSCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A1C1C1EEBE01B0059DD7D /* WSCalendarDate.swift */; };
+		540A1C241EEBE01B0059DD7D /* WSCalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A1C1D1EEBE01B0059DD7D /* WSCalendarItem.swift */; };
+		540A1C251EEBE01B0059DD7D /* WSCalendarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A1C1E1EEBE01B0059DD7D /* WSCalendarTool.swift */; };
+		540A1C261EEBE01B0059DD7D /* WSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A1C1F1EEBE01B0059DD7D /* WSCalendarView.swift */; };
+		540A1C271EEBE01B0059DD7D /* WSCalendarViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540A1C201EEBE01B0059DD7D /* WSCalendarViewModule.swift */; };
 		5424098A1EDEAA7B00680935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409891EDEAA7B00680935 /* AppDelegate.swift */; };
 		5424098C1EDEAA7B00680935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424098B1EDEAA7B00680935 /* ViewController.swift */; };
 		5424098F1EDEAA7B00680935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5424098D1EDEAA7B00680935 /* Main.storyboard */; };
@@ -15,12 +21,6 @@
 		542409941EDEAA7B00680935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 542409921EDEAA7B00680935 /* LaunchScreen.storyboard */; };
 		5424099F1EDEAA7B00680935 /* WSCalendarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424099E1EDEAA7B00680935 /* WSCalendarDemoTests.swift */; };
 		542409AA1EDEAA7B00680935 /* WSCalendarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409A91EDEAA7B00680935 /* WSCalendarDemoUITests.swift */; };
-		542409B91EDEAAF200680935 /* WSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409B81EDEAAF200680935 /* WSCalendarView.swift */; };
-		542409BC1EDEAF6100680935 /* WSCalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BA1EDEAF6100680935 /* WSCalendarItem.swift */; };
-		542409BF1EDFBBEE00680935 /* WSCalendarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */; };
-		548F62871EE7A86900040915 /* WSCalendarViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F62861EE7A86900040915 /* WSCalendarViewModule.swift */; };
-		548F62891EE7A88700040915 /* WSCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F62881EE7A88700040915 /* WSCalendarDate.swift */; };
-		548F628B1EE7F0AB00040915 /* WSCalendarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F628A1EE7F0AB00040915 /* WSCalendarConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		541050F21EE5997300F47D91 /* WSCalendarCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarCollectionLayout.swift; sourceTree = "<group>"; };
+		540A1C1A1EEBE01B0059DD7D /* WSCalendarCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarCollectionLayout.swift; sourceTree = "<group>"; };
+		540A1C1B1EEBE01B0059DD7D /* WSCalendarConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarConfig.swift; sourceTree = "<group>"; };
+		540A1C1C1EEBE01B0059DD7D /* WSCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarDate.swift; sourceTree = "<group>"; };
+		540A1C1D1EEBE01B0059DD7D /* WSCalendarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarItem.swift; sourceTree = "<group>"; };
+		540A1C1E1EEBE01B0059DD7D /* WSCalendarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarTool.swift; sourceTree = "<group>"; };
+		540A1C1F1EEBE01B0059DD7D /* WSCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarView.swift; sourceTree = "<group>"; };
+		540A1C201EEBE01B0059DD7D /* WSCalendarViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarViewModule.swift; sourceTree = "<group>"; };
 		542409861EDEAA7B00680935 /* WSCalendarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSCalendarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		542409891EDEAA7B00680935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5424098B1EDEAA7B00680935 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,12 +61,6 @@
 		542409A51EDEAA7B00680935 /* WSCalendarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WSCalendarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		542409A91EDEAA7B00680935 /* WSCalendarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarDemoUITests.swift; sourceTree = "<group>"; };
 		542409AB1EDEAA7B00680935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		542409B81EDEAAF200680935 /* WSCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarView.swift; sourceTree = "<group>"; };
-		542409BA1EDEAF6100680935 /* WSCalendarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarItem.swift; sourceTree = "<group>"; };
-		542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarTool.swift; sourceTree = "<group>"; };
-		548F62861EE7A86900040915 /* WSCalendarViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarViewModule.swift; sourceTree = "<group>"; };
-		548F62881EE7A88700040915 /* WSCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarDate.swift; sourceTree = "<group>"; };
-		548F628A1EE7F0AB00040915 /* WSCalendarConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSCalendarConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +88,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540A1C191EEBE01B0059DD7D /* WSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				540A1C1A1EEBE01B0059DD7D /* WSCalendarCollectionLayout.swift */,
+				540A1C1B1EEBE01B0059DD7D /* WSCalendarConfig.swift */,
+				540A1C1C1EEBE01B0059DD7D /* WSCalendarDate.swift */,
+				540A1C1D1EEBE01B0059DD7D /* WSCalendarItem.swift */,
+				540A1C1E1EEBE01B0059DD7D /* WSCalendarTool.swift */,
+				540A1C1F1EEBE01B0059DD7D /* WSCalendarView.swift */,
+				540A1C201EEBE01B0059DD7D /* WSCalendarViewModule.swift */,
+			);
+			name = WSCalendar;
+			path = ../WSCalendar;
+			sourceTree = "<group>";
+		};
 		5424097D1EDEAA7B00680935 = {
 			isa = PBXGroup;
 			children = (
-				542409B71EDEAA8F00680935 /* WSCalendar */,
+				540A1C191EEBE01B0059DD7D /* WSCalendar */,
 				542409881EDEAA7B00680935 /* WSCalendarDemo */,
 				5424099D1EDEAA7B00680935 /* WSCalendarDemoTests */,
 				542409A81EDEAA7B00680935 /* WSCalendarDemoUITests */,
@@ -138,20 +153,6 @@
 				542409AB1EDEAA7B00680935 /* Info.plist */,
 			);
 			path = WSCalendarDemoUITests;
-			sourceTree = "<group>";
-		};
-		542409B71EDEAA8F00680935 /* WSCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				542409B81EDEAAF200680935 /* WSCalendarView.swift */,
-				542409BA1EDEAF6100680935 /* WSCalendarItem.swift */,
-				542409BE1EDFBBEE00680935 /* WSCalendarTool.swift */,
-				541050F21EE5997300F47D91 /* WSCalendarCollectionLayout.swift */,
-				548F62861EE7A86900040915 /* WSCalendarViewModule.swift */,
-				548F62881EE7A88700040915 /* WSCalendarDate.swift */,
-				548F628A1EE7F0AB00040915 /* WSCalendarConfig.swift */,
-			);
-			path = WSCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,15 +290,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540A1C251EEBE01B0059DD7D /* WSCalendarTool.swift in Sources */,
+				540A1C241EEBE01B0059DD7D /* WSCalendarItem.swift in Sources */,
 				5424098C1EDEAA7B00680935 /* ViewController.swift in Sources */,
-				548F62891EE7A88700040915 /* WSCalendarDate.swift in Sources */,
-				548F628B1EE7F0AB00040915 /* WSCalendarConfig.swift in Sources */,
-				542409BC1EDEAF6100680935 /* WSCalendarItem.swift in Sources */,
-				542409B91EDEAAF200680935 /* WSCalendarView.swift in Sources */,
-				548F62871EE7A86900040915 /* WSCalendarViewModule.swift in Sources */,
-				542409BF1EDFBBEE00680935 /* WSCalendarTool.swift in Sources */,
-				541050F31EE5997300F47D91 /* WSCalendarCollectionLayout.swift in Sources */,
+				540A1C211EEBE01B0059DD7D /* WSCalendarCollectionLayout.swift in Sources */,
 				5424098A1EDEAA7B00680935 /* AppDelegate.swift in Sources */,
+				540A1C231EEBE01B0059DD7D /* WSCalendarDate.swift in Sources */,
+				540A1C271EEBE01B0059DD7D /* WSCalendarViewModule.swift in Sources */,
+				540A1C261EEBE01B0059DD7D /* WSCalendarView.swift in Sources */,
+				540A1C221EEBE01B0059DD7D /* WSCalendarConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
