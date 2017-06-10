@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var calendarView: WSCalendarView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +21,15 @@ class ViewController: UIViewController {
 //MARK:- layout
     private func configSubViews() {
         
-        let calendarView = WSCalendarView(frame: CGRect(x: 0, y: 100, width: view.bounds.size.width, height: 100), config: WSCalendarConfig())
+        calendarView = WSCalendarView(frame: CGRect(x: 0, y: 100, width: 100, height: 100), config: WSCalendarConfig())
         calendarView.calendarDelegate = self
         view.addSubview(calendarView)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        calendarView.frame = CGRect(x: 0, y: 100, width: view.bounds.size.width, height: 100)
     }
 
 
