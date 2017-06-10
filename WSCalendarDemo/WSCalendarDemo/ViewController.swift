@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 //MARK:- layout
     private func configSubViews() {
         
-        let calendarView = WSCalendarView(frame: CGRect(x: 0, y: 100, width: view.bounds.size.width, height: 300), config: WSCalendarConfig())
+        let calendarView = WSCalendarView(frame: CGRect(x: 0, y: 100, width: view.bounds.size.width, height: 100), config: WSCalendarConfig())
         calendarView.calendarDelegate = self
         view.addSubview(calendarView)
     }

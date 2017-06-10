@@ -67,6 +67,11 @@ class WSCalendarView: UIView {
                 itemView.itemDelegate = self
                 scrollView.addSubview(itemView)
             }
+            
+            if i == 0 {
+                let itemRow = sourceArr[i].count / 7
+                updateScrollViewFrame(itemRow)
+            }
         }
         
         scrollView.contentSize = CGSize(width: scrollView.bounds.size.width * CGFloat(sourceArr.count), height: scrollView.bounds.size.height)
@@ -75,6 +80,14 @@ class WSCalendarView: UIView {
     fileprivate func updateScrollViewFrame(_ width: CGFloat, _ height: CGFloat) {
         self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: width, height: height)
         scrollView.frame = self.bounds
+    }
+    
+    fileprivate func updateScrollViewFrame(_ itemRow: Int) {
+        if let itemSize = WSCalendarConfig.itemSize {
+            let height = CGFloat(itemRow) * itemSize.height + CGFloat(itemRow - 1) * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.top + WSCalendarConfig.scrollEdgeInset.bottom
+            let width = 7.0 * itemSize.width + 6.0 * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.left + WSCalendarConfig.scrollEdgeInset.right
+            updateScrollViewFrame(width, height)
+        }
     }
     
     fileprivate func reloadData() {
@@ -122,12 +135,7 @@ extension WSCalendarView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let index = lroundf(Float(scrollView.contentOffset.x / scrollView.bounds.size.width))
         let itemRow = sourceArr[index].count / 7
-        
-        if let itemSize = WSCalendarConfig.itemSize {
-            let height = CGFloat(itemRow) * itemSize.height + CGFloat(itemRow - 1) * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.top + WSCalendarConfig.scrollEdgeInset.bottom
-            let width = 7.0 * itemSize.width + 6.0 * WSCalendarConfig.itemSpacing + WSCalendarConfig.scrollEdgeInset.left + WSCalendarConfig.scrollEdgeInset.right
-            updateScrollViewFrame(width, height)
-        }
+        updateScrollViewFrame(itemRow)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
